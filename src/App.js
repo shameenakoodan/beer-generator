@@ -1,5 +1,4 @@
 import './App.css';
-import BeerCard from './components/BeerCard/BeerCard';
 import {useEffect, useState} from "react";
 import BeerContainer from './components/BeerContainer/BeerContainer'
 
