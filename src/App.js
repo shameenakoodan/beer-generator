@@ -16,12 +16,12 @@ const App = () => {
       setBeers(data);
     });
   }
-  
   useEffect(getBeer,[]);
   return (
     <div className="App">
       <div className='side-nav'> 
-        <SideNav />
+      
+      {beers && <SideNav beers={beers}/>}
       </div>
       
       <div>
