@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import {useEffect, useState} from "react";
 import BeerContainer from './components/BeerContainer/BeerContainer'
 
@@ -19,9 +19,10 @@ const App = () => {
   useEffect(getBeer,[]);
   return (
     <div className="App">
-      {beers && <BeerContainer beers={beers} />}
+      <div>
+        {beers && <BeerContainer beers={beers} />}
+      </div>
     </div>
   );
 }
-
 export default App;
