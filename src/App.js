@@ -1,7 +1,7 @@
 import './App.scss';
 import {useEffect, useState} from "react";
 import BeerContainer from './components/BeerContainer/BeerContainer'
-import SideNav from './components/SideNav/SideNav';
+import MainContainer from './components/MainContainer/MainContainer';
 
 const App = () => {
   const [beers,setBeers] = useState();
@@ -16,17 +16,18 @@ const App = () => {
       setBeers(data);
     });
   }
+  
   useEffect(getBeer,[]);
   return (
     <div className="App">
       <div className='side-nav'> 
       
-      {beers && <SideNav beers={beers}/>}
+      {beers && <MainContainer beers={beers}/>}
       </div>
       
-      <div>
-        {beers && <BeerContainer beers={beers} />}
-      </div>
+     {/*} <div>
+       {beers && <BeerContainer beers={beers} />}
+  </div>*/}
     </div>
   );
 }
