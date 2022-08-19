@@ -3,4 +3,8 @@ input{
     border-bottom: 2px solid #1c87c9;
     background: transparent;
     color: white;
+    
+}
+input:focus {
+    outline: none;
 }

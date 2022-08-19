@@ -73,10 +73,10 @@ const handleChange = (event) => {
                 handleInput = {handleInput}
                 />
                 <CheckBox 
-                title = {"ABV over 6%)"} 
+                title = {"ABV (over 6%)"} 
                 handleChange={handleChange} 
                 id="1"/>
-                <CheckBox title = {"Classic Range"}
+                <CheckBox title = {"Classic Range  "}
                 handleChange = {handleChange}
                 id = "2"/>
                 <CheckBox title = {"Acidic (pH < 4)"} 
