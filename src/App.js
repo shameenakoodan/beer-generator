@@ -2,7 +2,6 @@ import './App.scss';
 import {useEffect, useState} from "react";
 import BeerContainer from './components/BeerContainer/BeerContainer'
 import MainContainer from './container/MainContainer/MainContainer';
-
 const App = () => {
   const [beers,setBeers] = useState();
   const getBeer = () =>{
@@ -21,7 +20,7 @@ const App = () => {
   return (
 
     <div className="App">
-      <div className='header'>
+      <div className='App-header'>
         Beer Generator
       </div>
       <main>

@@ -1,3 +1,4 @@
+import './SearchBox.scss'
 const SearchBox = (props)=>{
     const {label,searchTerm,handleInput}=props;
     return (

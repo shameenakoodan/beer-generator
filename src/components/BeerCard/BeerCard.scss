@@ -1,11 +1,23 @@
 .beer-card{
-    max-width: 20rem;
-    border: 1px solid black;
+    max-width: 27rem;
     background: #EAE0D6;
     border-radius: 10px;
-    opacity: 0.5;
+    opacity: 0.9;
+    color: black;
+    border: none;
+    max-height: 25rem;
+    overflow: scroll;
+    padding-top: 1rem;  
 }
 .beer-card img{
     width:6rem;
     height: 13rem;
+}
+.beer-card p{
+    font-weight: bold;
+    color: black;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }

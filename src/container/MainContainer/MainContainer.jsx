@@ -58,6 +58,7 @@ const handleChange = (event) => {
             break;
         case '3':
             setCheckedPh(!checked3);
+            break;
         default:
             break;
     }
@@ -72,13 +73,13 @@ const handleChange = (event) => {
                 handleInput = {handleInput}
                 />
                 <CheckBox 
-                title = {"High Alcohol (ABV value greater than 6%)"} 
+                title = {"ABV over 6%)"} 
                 handleChange={handleChange} 
                 id="1"/>
-                <CheckBox title = {"Classic Range (Was first brewed before 2010)"}
+                <CheckBox title = {"Classic Range"}
                 handleChange = {handleChange}
                 id = "2"/>
-                <CheckBox title = {"High Acidity (pH lower than 4)"} 
+                <CheckBox title = {"Acidic (pH < 4)"} 
                 handleChange = {handleChange}
                 id = "3"/>
             </div>

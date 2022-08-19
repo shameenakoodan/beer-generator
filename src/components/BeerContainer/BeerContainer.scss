@@ -1,5 +1,11 @@
 .beer-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2px;
+    grid-gap: 1rem;
 }
+@media screen and (max-width:764px) {
+    .beer-container{
+        display: flex;
+        flex-direction: column;
+    }
+ }
