@@ -23,7 +23,7 @@ main{
 }
 
 .App-header {
-  background-color: black;
+
   min-height: 20vh;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,6 @@ main{
   color: #f28e1c;
   font-family: 'Rubik Distressed', cursive;
 }
-.side-nav{
-  min-width: 20rem;
+.main-content{
+  min-width: 100%;
 }

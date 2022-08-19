@@ -1,6 +1,10 @@
 .flex-container{
     display: flex;
     flex-direction: row;
-    background-image: url("../../assets/images/background-image.jpeg");
+   // background-image: url("../../assets/images/background-image.jpeg");
     background-repeat: no-repeat;
+}
+.left-side{
+    float: left;
+    padding-left: 0;
 }

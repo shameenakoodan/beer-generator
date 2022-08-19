@@ -24,7 +24,7 @@ const App = () => {
         Beer Generator
       </div>
       <main>
-      <div className='side-nav'> 
+      <div className='main-content'> 
       
       {beers && <MainContainer beers={beers}/>}
       </div>
