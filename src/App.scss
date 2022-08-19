@@ -1,10 +1,16 @@
-.App {
+html {
   text-align: center;
+  //background-image: url("./assets/images/background-image.jpeg") ;
+  background-color: black;
+  background-repeat: none;
+  color:white;
+  background-position: center center;
+}
+main{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

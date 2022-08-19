@@ -1,6 +1,6 @@
-import SearchBox from "../SearchBox/SearchBox";
-import BeerContainer from "../BeerContainer/BeerContainer";
-import CheckBox from "../CheckBox/CheckBox";
+import SearchBox from "../../components/SearchBox/SearchBox";
+import BeerContainer from "../../components/BeerContainer/BeerContainer";
+import CheckBox from "../../components/CheckBox/CheckBox";
 
 import { useState } from "react";
 
@@ -25,11 +25,19 @@ const handleInput = (event)=>{
 //Filter the words or do the search
 let filteredBeers = props.beers.filter((beer) => {
     const beerTitleLower = beer.name.toLowerCase();
+    const [month,year] = beer.first_brewed.split('/');
+    if(checked1 && checked2 && checked3)
+        return beerTitleLower.includes(searchTerm) && beer.name && beer.abv > 6  && year <2010  && beer.ph <4
+    if(checked1 && checked2)
+        return beerTitleLower.includes(searchTerm) && beer.name && beer.abv > 6 && year <2010;
+    if(checked1 && checked3)
+        return beerTitleLower.includes(searchTerm) && beer.name && beer.abv > 6 && beer.ph <4;
+    if(checked2 && checked3)
+        return beerTitleLower.includes(searchTerm) && beer.name && year <2010 &&  beer.ph <4;
     if((checked1)){
         return beerTitleLower.includes(searchTerm) && beer.name && beer.abv > 6;
     }
     if((checked2)){
-        const [month,year] = beer.first_brewed.split('/');
         return beerTitleLower.includes(searchTerm) && beer.name && year <2010;
     }
     if(checked3){
@@ -38,10 +46,8 @@ let filteredBeers = props.beers.filter((beer) => {
     return beerTitleLower.includes(searchTerm) && beer.name;
 });
 
-
 //Handle input from check boxes
 const handleChange = (event) => {
-    console.log(`Id : ${event.target.id}`);
     const id  = event.target.id;
     switch(id){
         case '1':

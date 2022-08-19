@@ -1,4 +1,11 @@
 .beer-card{
-    max-width: 12rem;
+    max-width: 20rem;
     border: 1px solid black;
+    background: #EAE0D6;
+    border-radius: 10px;
+    opacity: 0.5;
+}
+.beer-card img{
+    width:6rem;
+    height: 13rem;
 }
