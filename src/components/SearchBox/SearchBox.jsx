@@ -10,7 +10,7 @@ const SearchBox = (props)=>{
             name={label}
             value={searchTerm} 
             onInput={handleInput}
-            placeholder="Search"
+            placeholder="Search By Name"
             />
         </form>
       );

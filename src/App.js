@@ -1,17 +1,14 @@
 import './App.scss';
 import {useEffect, useState} from "react";
-import BeerContainer from './components/BeerContainer/BeerContainer'
 import MainContainer from './container/MainContainer/MainContainer';
 const App = () => {
   const [beers,setBeers] = useState();
   const getBeer = () =>{
     fetch("https://api.punkapi.com/v2/beers")
     .then((res)=>{
-      //console.log(result.json());
       return res.json();
     })
     .then((data)=>{
-      //console.log(data);
       setBeers(data);
     });
   }
