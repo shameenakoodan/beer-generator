@@ -1,4 +1,4 @@
-
+import './Button.scss'
 const Button = (props) =>{
     const {title,handleClick} = props;
     return (<div>

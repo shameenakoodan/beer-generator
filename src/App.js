@@ -14,11 +14,14 @@ const App = () => {
   }
   
   useEffect(getBeer,[]);
+  const refreshPage=()=>{
+    window.location.reload(false);
+  }
   return (
 
     <div className="App">
-      <div className='App-header'>
-        Beer Generator
+      <div className='App-header' onClick={refreshPage}>
+      Beer Generator
       </div>
       <main>
       <div className='main-content'> 
