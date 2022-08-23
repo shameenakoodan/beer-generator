@@ -16,4 +16,9 @@ it('renders learn react link', () => {
     const linkElement = screen.getByText(/Beer Search/i);
     expect(linkElement).toBeInTheDocument();
   });
+  it("Should render the form",()=>{
+    render(<SearchBox />);
+    const form = screen.getByRole("form");
+    expect(form).toBeInTheDocument();
+});
   

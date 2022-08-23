@@ -5,13 +5,16 @@ import CheckBox from "../../components/CheckBox/CheckBox";
 import { useState } from "react";
 
 import "./MainContainer.scss";
+import Button from "../../components/Button/Button";
 
 const MainContainer = (props)=>{
+const [arrayBeers,setBeers] =useState(props.beers);
+
 const [searchTerm,setSearchTerm]  = useState("");
 const [checked1, setCheckedAbv] = useState(false);
 const [checked2,setCheckedRange] = useState(false);
 const [checked3,setCheckedPh] = useState(false);
-
+const [special,setSpecial] = useState([]);
 /*const beerDetails = props.beers.map((beer)=>{
     return beer;
 });*/
@@ -23,7 +26,8 @@ const handleInput = (event)=>{
 }
 
 //Filter the words or do the search
-let filteredBeers = props.beers.filter((beer) => {
+let filteredBeers =arrayBeers.filter((beer) => {
+
     const beerTitleLower = beer.name.toLowerCase();
     const [month,year] = beer.first_brewed.split('/');
     if(checked1 && checked2 && checked3)
@@ -42,7 +46,7 @@ let filteredBeers = props.beers.filter((beer) => {
     }
     if(checked3){
         return beerTitleLower.includes(searchTerm) && beer.name && beer.ph <4;
-    }
+    }  
     return beerTitleLower.includes(searchTerm) && beer.name;
 });
 
@@ -62,9 +66,18 @@ const handleChange = (event) => {
         default:
             break;
     }
-       
-    
   };
+  //Handle the button click
+  const handleClick = (event)=>{
+        fetch("http://localhost:3010")
+        .then((res)=>{
+          return res.json();
+        })
+        .then((data)=>{
+            setBeers(data.beers);
+        });
+  }
+
     return (
         <div className="flex-container">
             <div className="left-side">
@@ -82,6 +95,7 @@ const handleChange = (event) => {
                 <CheckBox title = {"Acidic (pH < 4)"} 
                 handleChange = {handleChange}
                 id = "3"/>
+                <Button title = {"Special Beers"} handleClick = {handleClick}/>
             </div>
             <div className="right-side">
                 <BeerContainer beers = {filteredBeers}/> 

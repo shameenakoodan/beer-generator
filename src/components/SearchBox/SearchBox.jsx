@@ -2,7 +2,7 @@ import './SearchBox.scss'
 const SearchBox = (props)=>{
     const {label,searchTerm,handleInput}=props;
     return (
-        <form className="search-box">
+        <form className="search-box" name="form">
           <label>
             Beer Search
           </label>
