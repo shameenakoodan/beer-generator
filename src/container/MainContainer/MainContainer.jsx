@@ -14,7 +14,6 @@ const [searchTerm,setSearchTerm]  = useState("");
 const [checked1, setCheckedAbv] = useState(false);
 const [checked2,setCheckedRange] = useState(false);
 const [checked3,setCheckedPh] = useState(false);
-const [special,setSpecial] = useState([]);
 /*const beerDetails = props.beers.map((beer)=>{
     return beer;
 });*/
@@ -77,7 +76,28 @@ const handleChange = (event) => {
             setBeers(data.beers);
         });
   }
-
+  const newBeer = {
+    "id": "1",
+    "name": "Buzz",
+    "tagline": "A Real Bitter Experience.",
+    "first_brewed": "09/2007",
+    "description": "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
+    "image_url": "https://images.punkapi.com/v2/keg.png",
+    "abv": "4.5",
+    "ph": "4.4"
+}
+    
+  const addBeers = (event)=>{
+    fetch("http://localhost:3010",
+    {
+        method:'POST',
+        headers:{"Content-type":"application/json"},
+        body:JSON.stringify(newBeer)
+    }).then(()=>{
+        console.log("New Beer Added")
+    })
+    handleClick();
+    }
     return (
         <div className="flex-container">
             <div className="left-side">
@@ -96,6 +116,7 @@ const handleChange = (event) => {
                 handleChange = {handleChange}
                 id = "3"/>
                 <Button title = {"Special Beers"} handleClick = {handleClick}/>
+                <Button title = {"Add Beers"} handleClick = {addBeers} />
             </div>
             <div className="right-side">
                 <BeerContainer beers = {filteredBeers}/> 
