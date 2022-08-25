@@ -1,7 +1,8 @@
 import SearchBox from "../../components/SearchBox/SearchBox";
 import BeerContainer from "../../components/BeerContainer/BeerContainer";
 import CheckBox from "../../components/CheckBox/CheckBox";
-
+import { BrowserRouter as Router, Route,Routes } from "react-router-dom";
+import Form from "../../components/Form/Form";
 import { useState } from "react";
 
 import "./MainContainer.scss";
@@ -14,6 +15,13 @@ const [searchTerm,setSearchTerm]  = useState("");
 const [checked1, setCheckedAbv] = useState(false);
 const [checked2,setCheckedRange] = useState(false);
 const [checked3,setCheckedPh] = useState(false);
+
+const [isOpen,setisOpen] = useState(false);
+const togglePopUp = () =>{
+    setisOpen(!isOpen);
+}
+
+const [insertValues,setInsertValues] = useState();
 /*const beerDetails = props.beers.map((beer)=>{
     return beer;
 });*/
@@ -98,8 +106,10 @@ const handleChange = (event) => {
     })
     handleClick();
     }
+ 
     return (
-        <div className="flex-container">
+        <Router>
+                <div className="flex-container">
             <div className="left-side">
                 <SearchBox 
                 label = {"Beer Search"} 
@@ -117,11 +127,20 @@ const handleChange = (event) => {
                 id = "3"/>
                 <Button title = {"Special Beers"} handleClick = {handleClick}/>
                 <Button title = {"Add Beers"} handleClick = {addBeers} />
+                <button onClick={togglePopUp}>Add beers</button>
+                {isOpen && <Form  />}
             </div>
-            <div className="right-side">
+            <BeerContainer beers = {filteredBeers} />
+            {
+                /**<div className="right-side">
                 <BeerContainer beers = {filteredBeers}/> 
-            </div>
+    </div> */
+            }
+            
+            
         </div>
+        </Router>
+        
     );
 }
 export default MainContainer;
