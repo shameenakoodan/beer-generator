@@ -2,7 +2,7 @@
 .form-class{
   width: 100%;
   left:0;
-  height: 40vh;
+  height: 70vh;
   //position: fixed;
   background-color: black;
   z-index: 1000;
@@ -30,6 +30,8 @@
     right: 6rem;
     bottom: 5rem;
     z-index: 5;
+    border-radius: 20px;
+    height: 86vh;
 
   &__content {
     height: 100%;

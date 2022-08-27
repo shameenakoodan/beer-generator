@@ -35,6 +35,7 @@ const Form=(props)=>{
     }).then(()=>{
         console.log("New Beer Added")
     })
+    togglePopUp();
   };
     /*const submitValues=(event)=>{
       console.log("Come onnn");
@@ -59,6 +60,7 @@ const Form=(props)=>{
           onClick={togglePopUp}
         />
         <form  onSubmit={handleSubmit} className="form-menu__form">
+        <label>Enter Beer Details</label>
         <FormInput title={"ID"} id={"id"}/>
         <FormInput title={"name"} id={"name"} />
         <FormInput title = {"tagline"} id={"tagline"}/>
@@ -94,7 +96,7 @@ const Form=(props)=>{
 
         <label htmlFor="ph">Ph</label>
       <input type="text" name="ph" id="ph" className="form-menu__input"/>*/}
-        <Button title="Save" />
+        <Button title="Save Beer" />
       </form>
       </div>
     </div>
