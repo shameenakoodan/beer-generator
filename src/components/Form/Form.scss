@@ -1,0 +1,97 @@
+@use "../../assets/sass/_variables.scss" as *;
+.form-class{
+  width: 100%;
+  left:0;
+  height: 40vh;
+  //position: fixed;
+  background-color: black;
+  z-index: 1000;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50);
+}
+.form-class input{
+  display: block;
+    font-size:11px;
+    padding:4px 2px;
+    border:solid 1px #aacfe4;
+    width:70px;
+    margin:2px 0 20px 10px;
+}
+
+
+
+.form-menu {
+  background-color: $color-black;
+    position: fixed;
+    top: 5rem;
+    left: 6rem;
+    right: 6rem;
+    bottom: 5rem;
+    z-index: 5;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__cross {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__title {
+    color: $color-white;
+    font-size: 30px;
+  }
+
+  &__form {
+    display: grid;
+    font-size: 20px;
+    color: $color-white;
+    justify-items: center;
+  }
+
+  &__input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 15px;
+    border: 5px solid $color-grey;
+    color: $color-black;
+
+    &:focus {
+      outline: none;
+      border: 5px solid $color-primary;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .settings-menu {
+    background-color: rgba($color-black, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+      position: relative;
+      background-color: $color-black;
+      width: 30%;
+      height: 80%;
+      border-radius: 15px;
+    }
+
+    &__cross {
+      right: 20px;
+    }
+  }
+}

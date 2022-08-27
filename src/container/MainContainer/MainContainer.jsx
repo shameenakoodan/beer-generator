@@ -128,7 +128,7 @@ const handleChange = (event) => {
                 <Button title = {"Special Beers"} handleClick = {handleClick}/>
                 <Button title = {"Add Beers"} handleClick = {addBeers} />
                 <button onClick={togglePopUp}>Add beers</button>
-                {isOpen && <Form  />}
+                {isOpen && <Form  togglePopUp={togglePopUp}/>}
             </div>
             <BeerContainer beers = {filteredBeers} />
             {
